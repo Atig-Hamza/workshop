@@ -75,4 +75,20 @@ class ArticleController extends Controller
 
         return redirect('/')->with('success', 'Article deleted successfully');
     }
+
+    /**
+     * Search for articles by title.
+     */
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $articles = Article::where('title', 'like', "%{$query}%")->get();
+
+        if ($articles->isEmpty()) {
+            return redirect('/')->with('error', 'No articles found');
+        }
+
+        return response()->json($articles);
+    }
+
 }

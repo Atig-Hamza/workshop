@@ -31,3 +31,5 @@ Route::get('/edit/{article}', [ArticleController::class, 'edit'])->name('article
 
 Route::put('/articles.update/{article}', [ArticleController::class, 'update'])->name('articles.update');
 
+Route::get('/search', [ArticleController::class, 'search'])->name('articles.search');
+
