@@ -20,8 +20,8 @@
                 <input type="text" id="title" name="title" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="content">Content:</label>
-                <textarea id="content" name="content" class="form-control" required></textarea>
+                <label for="description">description:</label>
+                <textarea id="description" name="description" class="form-control" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Add Article</button>
         </form>
