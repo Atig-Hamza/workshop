@@ -44,6 +44,11 @@
             @endforeach
         </ul>
     </div>
+    @if (session('user_id'))
+        <p>You are logged in as user {{ session('user_id') }}</p>
+    @else
+        <p>You are not logged in</p>
+    @endif
 </body>
 
 </html>

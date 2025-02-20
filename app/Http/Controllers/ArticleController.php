@@ -32,6 +32,7 @@ class ArticleController extends Controller
         $article = new Article();
         $article->title = $request->input('title');
         $article->description = $request->input('description');
+        $article->user_id = 1;
         $article->save();
 
         return redirect('/');
