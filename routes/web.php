@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::post('/articles.store', [ArticleController::class, 'store'])->name('articles.store');
+
+Route::delete('/articles.destroy/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');

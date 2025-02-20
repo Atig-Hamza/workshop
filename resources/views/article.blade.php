@@ -34,10 +34,11 @@
                     <h3>{{ $article->title }}</h3>
                     <p>{{ $article->description }}</p>
                     <a href="/articles.edit" class="btn btn-secondary">Edit</a>
-                    <form action="/articles.destroy" method="POST" style="display:inline;">
+                    <form action="/articles.destroy/{{ $article->id }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit"
+                            class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Remove</button>
                     </form>
                 </li>
             @endforeach
