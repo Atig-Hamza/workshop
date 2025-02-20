@@ -33,7 +33,7 @@
                 <li class="list-group-item">
                     <h3>{{ $article->title }}</h3>
                     <p>{{ $article->description }}</p>
-                    <a href="/articles.edit" class="btn btn-secondary">Edit</a>
+                    <a href="/articles.edit/{{ $article->id }}" class="btn btn-secondary">Edit</a>
                     <form action="/articles.destroy/{{ $article->id }}" method="POST">
                         @csrf
                         @method('DELETE')

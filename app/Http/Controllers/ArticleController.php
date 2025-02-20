@@ -50,7 +50,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('edit', compact('article'));
     }
 
     /**
@@ -58,7 +58,11 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $article->title = $request->input('title');
+        $article->description = $request->input('description');
+        $article->save();
+
+        return redirect('/')->with('success', 'Article updated successfully');
     }
 
     /**
